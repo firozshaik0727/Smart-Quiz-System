@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    Available Quizzes
+</h2>
+
+<div class="row">
+
+    {% for quiz in quizzes %}
+
+    <div class="col-md-4 mb-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h5 class="card-title">
+                    {{ quiz.title }}
+                </h5>
+
+                <p class="card-text">
+                    Category:
+                    {{ quiz.category }}
+                </p>
+
+                <p class="card-text">
+                    Time:
+                    {{ quiz.timer }} Minutes
+                </p>
+
+                <a
+                    href="/quiz/{{ quiz.id }}/instructions/"
+                    class="btn btn-primary"
+                >
+                    View Instructions
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

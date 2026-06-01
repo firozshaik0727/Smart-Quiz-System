@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow-lg mt-5">
+
+    <div class="card-header bg-primary text-white">
+        <h2>{{ quiz.title }}</h2>
+    </div>
+
+    <div class="card-body">
+
+        <h4 class="mb-3">
+            Quiz Instructions
+        </h4>
+
+        <ul class="list-group">
+
+            <li class="list-group-item">
+                Total Questions:
+                <strong>{{ total_questions }}</strong>
+            </li>
+
+            <li class="list-group-item">
+                Time Limit:
+                <strong>{{ quiz.timer }} Minutes</strong>
+            </li>
+
+            <li class="list-group-item">
+                Passing Marks:
+                <strong>70%</strong>
+            </li>
+
+            <li class="list-group-item">
+                Fullscreen Mode:
+                <strong>Required</strong>
+            </li>
+
+            <li class="list-group-item">
+                Tab Switching:
+                <strong>Not Allowed</strong>
+            </li>
+
+            <li class="list-group-item">
+                Copy / Paste:
+                <strong>Disabled</strong>
+            </li>
+
+        </ul>
+
+        <div class="text-center mt-4">
+
+            <a
+                href="/quiz/{{ quiz.id }}/"
+                class="btn btn-success btn-lg"
+            >
+                Start Quiz
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

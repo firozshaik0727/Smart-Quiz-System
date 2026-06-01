@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>My Dashboard</h2>
+
+<hr>
+
+<h4>Total Quizzes Taken: {{ total_quizzes }}</h4>
+
+<h4>Highest Score: {{ highest_score }}</h4>
+
+<h4>Average Percentage:
+    {{ average_percentage|floatformat:2 }}%
+</h4>
+
+<hr>
+
+<h3>Recent Attempts</h3>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Quiz</th>
+        <th>Score</th>
+        <th>Percentage</th>
+        <th>Date</th>
+    </tr>
+
+    {% for result in results %}
+
+    <tr>
+        <td>{{ result.quiz.title }}</td>
+        <td>{{ result.score }}</td>
+        <td>{{ result.percentage }}%</td>
+        <td>{{ result.created_at }}</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card shadow-lg border-0 mt-5">
+
+    <div class="card-body text-center">
+
+        <h2 class="text-success">
+            Quiz Submitted Successfully
+        </h2>
+
+        <hr>
+
+        <h3>
+            Score: {{ score }} / {{ total }}
+        </h3>
+
+        <h3>
+            Percentage: {{ percentage|floatformat:2 }}%
+        </h3>
+
+        <br>
+
+        {% if percentage >= 70 %}
+
+        <a
+            href="/certificate/"
+            class="btn btn-success btn-lg"
+        >
+            Download Certificate
+        </a>
+
+        {% else %}
+
+        <div class="alert alert-warning">
+
+            Certificate is available only for
+            scores 70% and above.
+
+        </div>
+
+        {% endif %}
+
+        <br><br>
+
+        <a
+            href="/dashboard/"
+            class="btn btn-primary"
+        >
+            Go To Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

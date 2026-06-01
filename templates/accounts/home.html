@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="text-center mt-5">
+
+```
+<h1 class="display-4 fw-bold">
+    Smart Quiz System
+</h1>
+
+<p class="lead mt-3">
+    Test your knowledge with timed quizzes and instant results.
+</p>
+
+<div class="row mt-5 justify-content-center">
+
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5>⏱ Timed Quizzes</h5>
+                <p>Attempt quizzes with countdown timers.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5>📊 Instant Results</h5>
+                <p>Get score and percentage immediately.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="mt-5">
+
+    {% if user.is_authenticated %}
+
+        <a href="/quiz/" class="btn btn-primary btn-lg me-3">
+            Start Quiz
+        </a>
+
+    {% else %}
+
+        <a href="/login/" class="btn btn-primary btn-lg me-3">
+            Login to Start Quiz
+        </a>
+
+    {% endif %}
+
+</div>
+```
+
+</div>
+
+{% endblock %}
